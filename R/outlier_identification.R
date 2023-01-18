@@ -13,6 +13,6 @@
 #'
 #' @examples
 #' get_outliers(df,"Wages_Euros","SD",3)
-get_oultiers <- function(df, col,method ="SD",thresh=3) {
+soc_get_oultiers <- function(df, col,method ="SD",thresh=3) {
 
 }
