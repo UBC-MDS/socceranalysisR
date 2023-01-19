@@ -56,11 +56,6 @@ for users who may not have extensive experience with data analysis or
 ## Installation
 
 You can install the development version of socceranalysisR from
-[GitHub](https://github.com/UBC-MDS/socceranalysisR) with:
-
-## Installation
-
-You can install the development version of socceranalysisR from
 [GitHub](https://github.com/) with:
 
 ``` r
