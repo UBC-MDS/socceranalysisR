@@ -6,7 +6,56 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of socceranalysisR is to …
+socceranalysisR is a powerful R package designed to make it easy to
+analyze and understand soccer statistics. With its set of functions, you
+can quickly obtain summary statistics for a particular team, identify
+outliers based on market value, rank players by goals per game and
+display different plots. The package is built in a way that allows user
+to easily customize the functions to their own interests, giving them
+the flexibility to analyze the data in a way that is most meaningful to
+them. Whether you’re a coach, a sports journalist or an analyst,
+socceranalysisR will help you unlock the insights hidden in your soccer
+data and make more informed decisions.
+
+## Functions
+
+1.  `soc_find_team_stat`: provides a quick and easy way to understand
+    the descriptive statistics of a team.
+
+2.  `soc_rankingplayers`: Ranks players based on specific attributes
+
+3.  `soc_get_outliers`: Identifes outliers using statistical methods
+    (interquartile range or standard deviations)
+
+4.  `soc_viz_stats` : Generates meaningful visualizations to help users
+    understand and interpret the data
+
+- `soc_viz_stats_scatter` : Generate a scatter plot for two given
+  numeric columns
+- `soc_viz_stats_hist` : Generate a histogram for one given numeric
+  columns socceranalysisR can be used in conjunction with other popular
+  R packages such as [dplyr](https://github.com/tidyverse/dplyr) and
+  [ML_for_Hackers](https://github.com/johnmyleswhite/ML_for_Hackers) to
+  perform more advanced data analysis and machine learning tasks. For
+  example, users can use dplyr to manipulate and clean their soccer
+  data, and then use this package to perform specific soccer-related
+  analysis on the cleaned data. Additionally, socceranalysisR can be
+  used in conjunction with ML_for_Hackers for machine learning tasks on
+  soccer data. They are designed to be a higher-level, more
+  user-friendly and declarative interface based on
+  [ggplot2](https://github.com/tidyverse/ggplot2) for performing
+  specific soccer-related analysis and visualization tasks. Users can
+  perform similar visualization using
+  [shiny](https://github.com/rstudio/shiny). Overall, socceranalysisR is
+  a valuable addition to the R ecosystem as it provides a specialized
+  tool for analyzing and understanding soccer data without the need for
+  writing complex code, this can be especially useful for users who may
+  not have extensive experience with data analysis or visualization.
+
+## Installation
+
+You can install the development version of socceranalysisR from
+[GitHub](https://github.com/UBC-MDS/socceranalysisR) with:
 
 ## Installation
 
@@ -27,29 +76,24 @@ library(socceranalysisR)
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+## Contributors
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+| Core contributor | Github.com username |
+|------------------|---------------------|
+| Flora Ouedraogo  | @florawendy19       |
+| Gaoxiang Wang    | @louiewang820       |
+| Manvir Kohli     | @manvirsingh96      |
+| Vincent Ho       | @vincentho32        |
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+## Contributing
 
-You can also embed plots, for example:
+Authors: Vincent Ho, Manvir Singh Kohli, Gaoxiang Wang, Flora Ouedraogo
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+Interested in contributing? Check out the contributing guidelines.
+Please note that this project is released with a Code of Conduct. By
+contributing to this project, you agree to abide by its terms.
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+## License
+
+`socceranalysisR` was created by Gaoxiang Wang, Manvir Kohli, Vincent Ho
+and Flora Ouedraogo. It is licensed under the terms of the MIT license.
