@@ -32,5 +32,5 @@ This function identifies outliers in the dataset based on either of the followin
 }
 }
 \examples{
-get_outliers(df,"Wages_Euros","SD",3)
+soc_get_oultiers(df,"Wages_Euros","SD",3)
 }

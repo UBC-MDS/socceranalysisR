@@ -7,12 +7,12 @@
 #' @param col Column vector in the dataframe based on which outliers are to be identified
 #' @param method  Name of the outlier identification method to be used.  "IQR" for IQR method and "SD" for mean and standard deviation method
 #' @param thresh The value of k in the Mean and Standard Deviation Method formula above
-#' 
+#'
 #' @return A dataframe which is aubset of original dataframe  containing only rows corresponding to outliers.
 #' @export
 #'
 #' @examples
-#' get_outliers(df,"Wages_Euros","SD",3)
+#' soc_get_oultiers(df,"Wages_Euros","SD",3)
 soc_get_oultiers <- function(df, col,method ="SD",thresh=3) {
 
 }
