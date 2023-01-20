@@ -28,12 +28,8 @@ data and make more informed decisions.
     (interquartile range or standard deviations)
 
 4.  `soc_viz_stats` : Generates meaningful visualizations to help users
-    understand and interpret the data
-
-- `soc_viz_stats_scatter` : Generate a scatter plot for two given
-  numeric columns
-- `soc_viz_stats_hist` : Generate a histogram for one given numeric
-  columns
+    understand and interpret the numerical data (scatter plots or
+    histograms)
 
 socceranalysisR can be used in conjunction with other popular R packages
 such as [dplyr](https://github.com/tidyverse/dplyr) and
@@ -69,7 +65,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(socceranalysisR)
-## basic example code
+## basic example codes
 ```
 
 ## Contributors
