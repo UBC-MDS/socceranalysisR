@@ -9,6 +9,6 @@
 #'
 #' @examples
 #' soc_viz_stats('age', 'Wages_Euros', TRUE , data)
-soc_viz_stats <- function(xcol, ycol,if_scatter, df=data) {
+soc_viz_stats <- function(xcol, ycol,if_scatter, df) {
 
 }

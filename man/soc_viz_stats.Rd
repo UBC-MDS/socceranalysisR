@@ -4,7 +4,7 @@
 \alias{soc_viz_stats}
 \title{Create a scatter plot of or two histograms based on chosen numerical features.}
 \usage{
-soc_viz_stats(xcol, ycol, if_scatter, df = data)
+soc_viz_stats(xcol, ycol, if_scatter, df)
 }
 \arguments{
 \item{xcol}{Column vector in the dataframe based on which outliers are to be identified.}
