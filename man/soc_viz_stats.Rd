@@ -22,5 +22,8 @@ ggplot2 chart
 Create a scatter plot of or two histograms based on chosen numerical features.
 }
 \examples{
-soc_viz_stats('age', 'Wages_Euros', TRUE , data)
+library(tidyverse)
+library(cowplot)
+small_data <- data.frame(age = - c(18, 20, 20), Wages_Euros = c(300000, 575000,	150000))
+soc_viz_stats('age', 'Wages_Euros', FALSE , small_data)
 }
