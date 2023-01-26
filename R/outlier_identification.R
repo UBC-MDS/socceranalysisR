@@ -7,22 +7,26 @@
 #' @param col Column vector in the dataframe based on which outliers are to be identified
 #' @param method  Name of the outlier identification method to be used.  "IQR" for IQR method and "SD" for mean and standard deviation method
 #' @param thresh The value of k in the Mean and Standard Deviation Method formula above
+#' 
+#' @import dplyr
+#' @import ggplot2
+#' @import rlang
+#' @import tidyverse
+#' @import cowplot
 #'
 #' @return A dataframe which is aubset of original dataframe  containing only rows corresponding to outliers.
 #' @export
 #'
 #' @examples
 #' library(dplyr)
-#' library(tidyverse)
-#' #' small_data <- data.frame(age = - c(18, 20, 20), Wages_Euros = c(300000, 575000, 150000))
-#' soc_get_oultiers(df,"Wages_Euros","SD",3)
+#' small_data <- data.frame(age = - c(18, 20, 20), Wages_Euros = c(300000, 575000, 150000))
+#' soc_get_oultiers(small_data,"Wages_Euros","SD",3)
 soc_get_oultiers <- function(df,
                              col,
                              method = "SD",
                              thresh = 3) {
   if (method == "SD") {
-    data_summ <-  df |> select({{col}}) |>
-      summarize(mean = mean({{col}}),sd = sd({{col}}))
+    data_summ <-  df |> summarise(mean = mean({{col}}),sd = stats::sd({{col}}))
     
     avg <- data_summ |> pull(mean)
     std <- data_summ |> pull(sd)
@@ -33,8 +37,8 @@ soc_get_oultiers <- function(df,
   
   else if (method == "IQR"){
   
-    data_summ <- data |> select(Wages_Euros) |> 
-      summarize(q1 = quantile(Wages_Euros,0.25),q3 = quantile(Wages_Euros,0.75))
+    data_summ <- data |>  summarise(q1 = stats::quantile({{col}},0.25),
+                                    q3 = stats::quantile({{col}},0.75))
     
     q1 <-  data_summ |> pull(q1)
     q3 <-  data_summ |> pull(q3)
@@ -47,4 +51,7 @@ soc_get_oultiers <- function(df,
   
   return (outliers_df)
 }
+
+?soc_get_oultiers()
+
   

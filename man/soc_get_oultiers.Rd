@@ -32,5 +32,7 @@ This function identifies outliers in the dataset based on either of the followin
 }
 }
 \examples{
-soc_get_oultiers(df,"Wages_Euros","SD",3)
+library(dplyr)
+small_data <- data.frame(age = - c(18, 20, 20), Wages_Euros = c(300000, 575000, 150000))
+soc_get_oultiers(small_data,"Wages_Euros","SD",3)
 }
