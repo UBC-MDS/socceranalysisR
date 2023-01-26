@@ -32,7 +32,7 @@ soc_get_oultiers <- function(df,
   }
   
   else if (method == "IQR"){
-    
+  
     data_summ <- data |> select(Wages_Euros) |> 
       summarize(q1 = quantile(Wages_Euros,0.25),q3 = quantile(Wages_Euros,0.75))
     
