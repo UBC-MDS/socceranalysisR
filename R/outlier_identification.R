@@ -12,7 +12,39 @@
 #' @export
 #'
 #' @examples
+#' library(dplyr)
+#' library(tidyverse)
+#' #' small_data <- data.frame(age = - c(18, 20, 20), Wages_Euros = c(300000, 575000, 150000))
 #' soc_get_oultiers(df,"Wages_Euros","SD",3)
-soc_get_oultiers <- function(df, col,method ="SD",thresh=3) {
-
+soc_get_oultiers <- function(df,
+                             col,
+                             method = "SD",
+                             thresh = 3) {
+  if (method == "SD") {
+    data_summ <-  df |> select({{col}}) |>
+      summarize(mean = mean({{col}}),sd = sd({{col}}))
+    
+    avg <- data_summ |> pull(mean)
+    std <- data_summ |> pull(sd)
+    
+    outliers_df <- df |> filter( ({{col}} > avg + (thresh * std)) |
+                                   ({{col}} < avg - (thresh * std)))
+  }
+  
+  else if (method == "IQR"){
+    
+    data_summ <- data |> select(Wages_Euros) |> 
+      summarize(q1 = quantile(Wages_Euros,0.25),q3 = quantile(Wages_Euros,0.75))
+    
+    q1 <-  data_summ |> pull(q1)
+    q3 <-  data_summ |> pull(q3)
+    
+    iqr = q3 - q1
+    
+    outliers_df <- df |> filter( ({{col}} > q3 + (1.5*iqr)) |
+                                   ({{col}} < q1 - (1.5*iqr)) )
+  }
+  
+  return (outliers_df)
 }
+  
