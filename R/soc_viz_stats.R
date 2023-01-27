@@ -1,5 +1,7 @@
 library(tidyverse)
 library(cowplot)
+#' Create vizualizations.
+#'
 #' Create a scatter plot of or two histograms based on chosen numerical features.
 #' @param xcol Column vector in the dataframe based on which outliers are to be identified.
 #' @param ycol Column vector in the dataframe based on which outliers are to be identified.

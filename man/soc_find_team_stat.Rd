@@ -24,5 +24,7 @@ Users can visualize a certain feature of the team by inputting it in the optiona
 If no input is found, the default feature of the box plot will be the "age" of the user's inputted team.
 }
 \examples{
-soc_find_team_stat(soccer_df, "Manchester United", "Market_Value_Euros")
+library(tidyverse)
+small_df <- data.frame(Team =  c("Man United", "Arsenal", "Chelsea"), Market_Value_Euros = c(300000, 575000,	150000))
+soc_find_team_stat(small_df , "Arsenal", "Market_Value_Euros")
 }

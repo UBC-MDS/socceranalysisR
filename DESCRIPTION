@@ -17,10 +17,11 @@ Imports:
     rlang,
     dplyr,
     magrittr,
-    ggplot2
+    ggplot2,
+    stats
 Description: socceranalysisR is a powerful R package designed to make it easy to analyze and understand soccer statistics.    
   With its set of functions, you can quickly obtain summary statistics for a particular team, 
-  identify outliers based on market value, rank players by goals per game and display different plots. 
+  identify outliers based on certain variables, rank players and display different plots. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
