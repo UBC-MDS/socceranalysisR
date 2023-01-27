@@ -2,7 +2,7 @@
 % Please edit documentation in R/soc_viz_stats.R
 \name{soc_viz_stats}
 \alias{soc_viz_stats}
-\title{Create a scatter plot of or two histograms based on chosen numerical features.}
+\title{Create vizualizations.}
 \usage{
 soc_viz_stats(xcol, ycol, if_scatter, df)
 }
