@@ -90,6 +90,14 @@ soc_viz_stats('age', 'Wages_Euros', FALSE , small_data)
 
 <img src="man/figures/README-example-2.png" width="100%" />
 
+``` r
+
+## getting outliers
+soc_get_outliers(small_data,Wages_Euros,"SD",2)
+#>   age Wages_Euros
+#> 1 -20      575000
+```
+
 ## Contributors
 
 | Core contributor | Github.com username |
