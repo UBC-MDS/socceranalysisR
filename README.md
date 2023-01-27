@@ -31,6 +31,8 @@ data and make more informed decisions.
     understand and interpret the numerical data (scatter plots or
     histograms)
 
+## R ecosystem
+
 socceranalysisR can be used in conjunction with other popular R packages
 such as [dplyr](https://github.com/tidyverse/dplyr) and
 [ML_for_Hackers](https://github.com/johnmyleswhite/ML_for_Hackers) to
@@ -47,7 +49,7 @@ similar visualization using [shiny](https://github.com/rstudio/shiny).
 Overall, socceranalysisR is a valuable addition to the R ecosystem as it
 provides a specialized tool for analyzing and understanding soccer data
 without the need for writing complex code, this can be especially useful
-for users who may not have extensive experience with data analysis or
+for users who may not have extensive experience with data analysis.
 
 ## Installation
 
@@ -65,8 +67,28 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(socceranalysisR)
-## basic example codes
+# Visualization 
+## toy data
+small_data <- data.frame(age = - c(18, 20, 20, 25, 25, 24, 25, 30, 33, 32, 44, 30, 17),
+                         Wages_Euros = c(300000, 575000,    150000, 475000,375000,  225000, 225000, 200000, 225000, 250000, 250000, 375000, 200000))
+## scatter plots
+soc_viz_stats('age', 'Wages_Euros', T , small_data)
+#> Warning: `label_number_si()` was deprecated in scales 1.2.0.
+#> ℹ Please use the `scale_cut` argument of `label_number()` instead.
+#> ℹ The deprecated feature was likely used in the socceranalysisR package.
+#>   Please report the issue to the authors.
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
+## hitograms
+soc_viz_stats('age', 'Wages_Euros', FALSE , small_data)
+#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+<img src="man/figures/README-example-2.png" width="100%" />
 
 ## Contributors
 
