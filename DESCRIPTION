@@ -16,6 +16,7 @@ Imports:
     scales,
     rlang,
     dplyr,
+    magrittr,
     ggplot2,
     stats
 Description: socceranalysisR is a powerful R package designed to make it easy to analyze and understand soccer statistics.    
