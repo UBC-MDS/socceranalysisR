@@ -89,19 +89,28 @@ small_data <- data.frame(age = - c(18, 20, 20, 25, 25, 24, 25, 30, 33, 32, 44, 3
                          Wages_Euros = c(300000, 575000,	150000,	475000,375000,	225000,	225000, 200000,	225000,	250000,	250000,	375000,	200000))
 ## scatter plots
 soc_viz_stats('age', 'Wages_Euros', T , small_data)
-## hitograms
+## histograms
 soc_viz_stats('age', 'Wages_Euros', FALSE , small_data)
 
 ## getting outliers
 soc_get_outliers(small_data,Wages_Euros,"SD",2)
 
-## Toy data set for ranking
+## toy data set for ranking
  my_data <- data.frame (Name  = c("Flora", "Mary", "Sarah", "Ester", "Sophie", "Maria"),
 second_column = c(1, 4, 3, 5, 1, 6),
 third_column  = c(7, 30, 12, 17, 34,8))
 
  ## ranking players by their names based on attributes
  rankingplayers(my_data, "second_column")
+ 
+ 
+## toy dataset to test soc_find_team_stat
+small_df <- data.frame(Team=  c("A", "B", "B", "B", "C", "C") ,
+                       Market_Value_Euros = c(375000,	225000,	225000, 200000,	225000,	250000),
+                       age = c(18, 20, 20, 25, 25, 24)) 
+
+## a team's descriptive statistics table and box-plot of selected feature
+soc_find_team_stat(small_df, "B", Market_Value_Euros)
 ```
 
 ## Contributors
