@@ -96,6 +96,21 @@ soc_viz_stats('age', 'Wages_Euros', FALSE , small_data)
 soc_get_outliers(small_data,Wages_Euros,"SD",2)
 #>   age Wages_Euros
 #> 1 -20      575000
+
+## Toy data set for ranking
+ my_data <- data.frame (Name  = c("Flora", "Mary", "Sarah", "Ester", "Sophie", "Maria"),
+second_column = c(1, 4, 3, 5, 1, 6),
+third_column  = c(7, 30, 12, 17, 34,8))
+
+ ## ranking players by their names based on attributes
+ rankingplayers(my_data, "second_column")
+#>     Name second_column
+#> 1  Maria             6
+#> 2  Ester             5
+#> 3   Mary             4
+#> 4  Sarah             3
+#> 5  Flora             1
+#> 6 Sophie             1
 ```
 
 ## Contributors
