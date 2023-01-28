@@ -82,7 +82,7 @@ soc_viz_stats('age', 'Wages_Euros', T , small_data)
 <img src="man/figures/README-example-1.png" width="100%" />
 
 ``` r
-## hitograms
+## histograms
 soc_viz_stats('age', 'Wages_Euros', FALSE , small_data)
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
@@ -97,7 +97,7 @@ soc_get_outliers(small_data,Wages_Euros,"SD",2)
 #>   age Wages_Euros
 #> 1 -20      575000
 
-## Toy data set for ranking
+## toy data set for ranking
  my_data <- data.frame (Name  = c("Flora", "Mary", "Sarah", "Ester", "Sophie", "Maria"),
 second_column = c(1, 4, 3, 5, 1, 6),
 third_column  = c(7, 30, 12, 17, 34,8))
@@ -111,7 +111,28 @@ third_column  = c(7, 30, 12, 17, 34,8))
 #> 4  Sarah             3
 #> 5  Flora             1
 #> 6 Sophie             1
+ 
+ 
+## toy dataset to test soc_find_team_stat
+small_df <- data.frame(Team=  c("A", "B", "B", "B", "C", "C") ,
+                       Market_Value_Euros = c(375000,   225000, 225000, 200000, 225000, 250000),
+                       age = c(18, 20, 20, 25, 25, 24)) 
+
+## a team's descriptive statistics table and box-plot of selected feature
+soc_find_team_stat(small_df, "B", Market_Value_Euros)
+#> [[1]]
+#>      Team           Market_Value_Euros      age       
+#>  Length:3           Min.   :200000     Min.   :20.00  
+#>  Class :character   1st Qu.:212500     1st Qu.:20.00  
+#>  Mode  :character   Median :225000     Median :20.00  
+#>                     Mean   :216667     Mean   :21.67  
+#>                     3rd Qu.:225000     3rd Qu.:22.50  
+#>                     Max.   :225000     Max.   :25.00  
+#> 
+#> [[2]]
 ```
+
+<img src="man/figures/README-example-3.png" width="100%" />
 
 ## Contributors
 
