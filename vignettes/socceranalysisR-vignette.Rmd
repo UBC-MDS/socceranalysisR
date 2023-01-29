@@ -15,8 +15,11 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-devtools::install_github("UBC-MDS/socceranalysisR")
-library(socceranalysisR)
+# install.packages("devtools")
+# devtools::install_github("UBC-MDS/socceranalysisR")
+# library(socceranalysisR)
+# As out package is not published yet, use devtools::load_all() first 
+devtools::load_all()
 ```
 
 Suppose you have three soccer data set:
