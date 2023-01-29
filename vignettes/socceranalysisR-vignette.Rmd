@@ -1,0 +1,74 @@
+---
+title: "socceranalysisR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{socceranalysisR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+devtools::install_github("UBC-MDS/socceranalysisR")
+library(socceranalysisR)
+```
+
+Suppose you have three soccer data set:
+```{r}
+small_data_1 <- data.frame(age = - c(18, 20, 20, 25, 25, 24, 25, 30, 33, 32, 44, 30, 17),
+                         Wages_Euros = c(300000, 575000,    150000, 475000,375000,  225000, 225000, 200000, 225000, 250000, 250000, 375000, 200000))
+small_data_2 <- data.frame (Name  = c("Flora", "Mary", "Sarah", "Ester", "Sophie", "Maria"),
+second_column = c(1, 4, 3, 5, 1, 6),
+third_column  = c(7, 30, 12, 17, 34,8))
+ 
+small_data_3 <- data.frame(Team=  c("A", "B", "B", "B", "C", "C") ,
+                       Market_Value_Euros = c(375000,   225000, 225000, 200000, 225000, 250000),
+                       age = c(18, 20, 20, 25, 25, 24)) 
+
+```
+
+## Generates meaningful visualizations to help users understand and interpret the numerical data using `soc_viz_stats`
+
+You can view any two chosen columns in a binned scatter plots by:
+```{r}
+## scatter plots
+soc_viz_stats('age', 'Wages_Euros', T , small_data_1)
+```
+
+Or you can view the distribution them as two histograms:
+```{r}
+## histograms
+soc_viz_stats('age', 'Wages_Euros', FALSE , small_data_1)
+```
+
+## Identifes outliers using statistical methods using `soc_get_outliers`
+
+You can also get the outliers based on standard deviations methods:
+```{r}
+## getting outliers
+soc_get_outliers(small_data_1,Wages_Euros,"SD",2)
+```
+
+## Ranks players based on specific attributes with `soc_rankingplayers`
+
+You can also rank players by their names based on the second feature by:
+```{r}
+# ranking players 
+rankingplayers(small_data_2, "second_column")
+```
+
+## provides a quick and easy way to understand the descriptive statistics of a team with `soc_find_team_stat`
+
+Finally, you can view a team's descriptive statistics table and box-plot of selected feature:
+```{r}
+# descriptive statistics
+soc_find_team_stat(small_data_3, "B", Market_Value_Euros)
+```
+
+
