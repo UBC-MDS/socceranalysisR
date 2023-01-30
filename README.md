@@ -4,6 +4,8 @@
 # socceranalysisR
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/UBC-MDS/socceranalysisR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/socceranalysisR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 socceranalysisR is a powerful R package designed to make it easy to
