@@ -18,7 +18,8 @@ Imports:
     dplyr,
     magrittr,
     ggplot2,
-    stats
+    stats,
+    devtools
 Description: socceranalysisR is a powerful R package designed to make it easy to analyze and understand soccer statistics.    
   With its set of functions, you can quickly obtain summary statistics for a particular team, 
   identify outliers based on certain variables, rank players and display different plots. 
@@ -28,5 +29,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Suggests: 
     covr,
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+VignetteBuilder: knitr
+URL: https://ubc-mds.github.io/socceranalysisR/
