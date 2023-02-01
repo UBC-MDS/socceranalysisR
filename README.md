@@ -62,6 +62,7 @@ You can install the development version of socceranalysisR from
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/socceranalysisR")
 ```
+##### Use this link to download the dataset: https://github.com/UBC-MDS/socceranalysis_python/blob/main/soccer_data.xlsx
 
 ## Example
 
